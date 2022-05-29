@@ -1,23 +1,46 @@
-import logo from './logo.svg';
+
+import { Form,Button } from 'react-bootstrap';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+
+        //state
+        const[friend,setFriend] = useState();
+        //function defination
+        let myFriend=(e)=>{ 
+        
+        console.log(e.target.value);
+        }
+        
+        //return statement
+        
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Form className="w-25 offset-3">
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Type your freind name</Form.Label>
+            <Form.Control type="text" placeholder="Enter name" />
+            
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>mobile number</Form.Label>
+            <Form.Control type="number" placeholder="Enter number" />
+            
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>date</Form.Label>
+            <Form.Control type="text" placeholder="Enter date" />
+            
+          </Form.Group>
+          <Button variant="primary" type="button" onClick={(e)=>{myFriend(e)}}>
+            Submit
+          </Button>
+        
+          
+         
+         
+       </Form>
     </div>
   );
 }
